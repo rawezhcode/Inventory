@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="InvntoryDataSetXarje" targetNamespace="http://tempuri.org/InvntoryDataSetXarje.xsd" xmlns:mstns="http://tempuri.org/InvntoryDataSetXarje.xsd" xmlns="http://tempuri.org/InvntoryDataSetXarje.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="InvntoryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="InvntoryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Inventory.Properties.Settings.GlobalReference.Default.InvntoryConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="xarjeakanTableAdapter" GeneratorDataComponentClassName="xarjeakanTableAdapter" Name="xarjeakan" UserDataComponentName="xarjeakanTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="InvntoryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        xarjeakan.id, type_Xarje.name, xarjeakan.bry_xarje, xarjeakan.barwar, users.full_name
+FROM            type_Xarje INNER JOIN
+                         xarjeakan ON xarjeakan.type_Xarje_id = type_Xarje.id INNER JOIN
+                         users ON xarjeakan.user_id = users.id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="bry_xarje" DataSetColumn="bry_xarje" />
+              <Mapping SourceColumn="barwar" DataSetColumn="barwar" />
+              <Mapping SourceColumn="full_name" DataSetColumn="full_name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="InvntoryDataSetXarje" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="InvntoryDataSetXarje" msprop:Generator_UserDSName="InvntoryDataSetXarje">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="xarjeakan" msprop:Generator_TableClassName="xarjeakanDataTable" msprop:Generator_TableVarName="tablexarjeakan" msprop:Generator_RowChangedName="xarjeakanRowChanged" msprop:Generator_TablePropName="xarjeakan" msprop:Generator_RowDeletingName="xarjeakanRowDeleting" msprop:Generator_RowChangingName="xarjeakanRowChanging" msprop:Generator_RowEvHandlerName="xarjeakanRowChangeEventHandler" msprop:Generator_RowDeletedName="xarjeakanRowDeleted" msprop:Generator_RowClassName="xarjeakanRow" msprop:Generator_UserTableName="xarjeakan" msprop:Generator_RowEvArgName="xarjeakanRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bry_xarje" msprop:Generator_ColumnVarNameInTable="columnbry_xarje" msprop:Generator_ColumnPropNameInRow="bry_xarje" msprop:Generator_ColumnPropNameInTable="bry_xarjeColumn" msprop:Generator_UserColumnName="bry_xarje" type="xs:int" minOccurs="0" />
+              <xs:element name="barwar" msprop:Generator_ColumnVarNameInTable="columnbarwar" msprop:Generator_ColumnPropNameInRow="barwar" msprop:Generator_ColumnPropNameInTable="barwarColumn" msprop:Generator_UserColumnName="barwar" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="full_name" msprop:Generator_ColumnVarNameInTable="columnfull_name" msprop:Generator_ColumnPropNameInRow="full_name" msprop:Generator_ColumnPropNameInTable="full_nameColumn" msprop:Generator_UserColumnName="full_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:xarjeakan" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

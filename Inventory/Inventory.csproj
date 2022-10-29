@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C90CEA74-8BAB-4B7D-AECD-4B8A7EC6384A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Inventory</RootNamespace>
+    <AssemblyName>Inventory</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.3.3, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.3\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data">
+      <HintPath>C:\Users\rawez\Downloads\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Db.cs" />
+    <Compile Include="frmAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccount.Designer.cs">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddItem.Designer.cs">
+      <DependentUpon>frmAddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddQarzCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddQarzCompany.Designer.cs">
+      <DependentUpon>frmAddQarzCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddQarzKryar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddQarzKryar.Designer.cs">
+      <DependentUpon>frmAddQarzKryar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBackToKoga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackToKoga.Designer.cs">
+      <DependentUpon>frmBackToKoga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBackUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackUp.Designer.cs">
+      <DependentUpon>frmBackUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBackUpRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackUpRestore.Designer.cs">
+      <DependentUpon>frmBackUpRestore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompany.Designer.cs">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanaway_Qarz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanaway_Qarz.Designer.cs">
+      <DependentUpon>frmDanaway_Qarz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanaway_Q_Company.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanaway_Q_Company.Designer.cs">
+      <DependentUpon>frmDanaway_Q_Company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanaway_Q_Kryar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanaway_Q_Kryar.Designer.cs">
+      <DependentUpon>frmDanaway_Q_Kryar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExpire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExpire.Designer.cs">
+      <DependentUpon>frmExpire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFroshraw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFroshraw.Designer.cs">
+      <DependentUpon>frmFroshraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventory.Designer.cs">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKryar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKryar.Designer.cs">
+      <DependentUpon>frmKryar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLossItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLossItem.Designer.cs">
+      <DependentUpon>frmLossItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMandub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMandub.Designer.cs">
+      <DependentUpon>frmMandub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNonAvalibleItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNonAvalibleItem.Designer.cs">
+      <DependentUpon>frmNonAvalibleItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQarz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQarz.Designer.cs">
+      <DependentUpon>frmQarz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQarzCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQarzCompany.Designer.cs">
+      <DependentUpon>frmQarzCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRestory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestory.Designer.cs">
+      <DependentUpon>frmRestory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSell.Designer.cs">
+      <DependentUpon>frmSell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmType.Designer.cs">
+      <DependentUpon>frmType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTypeXarje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTypeXarje.Designer.cs">
+      <DependentUpon>frmTypeXarje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmXarje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXarje.Designer.cs">
+      <DependentUpon>frmXarje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvntoryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvntoryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InvntoryDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvntoryDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InvntoryDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvntoryDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InvntoryDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvntoryDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InvntoryDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvntoryDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InvntoryDataSetCompany.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvntoryDataSetCompany.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InvntoryDataSetFroshraw.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvntoryDataSetFroshraw.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InvntoryDataSetGarawa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvntoryDataSetGarawa.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InvntoryDataSetkryar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvntoryDataSetkryar.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InvntoryDataSetMandub.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvntoryDataSetMandub.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InvntoryDataSetXarje.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvntoryDataSetXarje.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\pReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pages\pReport.Designer.cs">
+      <DependentUpon>pReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="report\frmFroshraw_rp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\frmFroshraw_rp.Designer.cs">
+      <DependentUpon>frmFroshraw_rp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\frmFroshtn_rp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\frmFroshtn_rp.Designer.cs">
+      <DependentUpon>frmFroshtn_rp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\frmFroshyar_rpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\frmFroshyar_rpt.Designer.cs">
+      <DependentUpon>frmFroshyar_rpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\frmKryarWasl_rpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\frmKryarWasl_rpt.Designer.cs">
+      <DependentUpon>frmKryarWasl_rpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\frmKryar_rpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\frmKryar_rpt.Designer.cs">
+      <DependentUpon>frmKryar_rpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\frmMandub_rp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\frmMandub_rp.Designer.cs">
+      <DependentUpon>frmMandub_rp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\frmXarje_rp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\frmXarje_rp.Designer.cs">
+      <DependentUpon>frmXarje_rp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="frmAccount.resx">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddItem.resx">
+      <DependentUpon>frmAddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddQarzCompany.resx">
+      <DependentUpon>frmAddQarzCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddQarzKryar.resx">
+      <DependentUpon>frmAddQarzKryar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBackToKoga.resx">
+      <DependentUpon>frmBackToKoga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBackUp.resx">
+      <DependentUpon>frmBackUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBackUpRestore.resx">
+      <DependentUpon>frmBackUpRestore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompany.resx">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanaway_Qarz.resx">
+      <DependentUpon>frmDanaway_Qarz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanaway_Q_Company.resx">
+      <DependentUpon>frmDanaway_Q_Company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanaway_Q_Kryar.resx">
+      <DependentUpon>frmDanaway_Q_Kryar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExpire.resx">
+      <DependentUpon>frmExpire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFroshraw.resx">
+      <DependentUpon>frmFroshraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventory.resx">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKryar.resx">
+      <DependentUpon>frmKryar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLossItem.resx">
+      <DependentUpon>frmLossItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMandub.resx">
+      <DependentUpon>frmMandub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNonAvalibleItem.resx">
+      <DependentUpon>frmNonAvalibleItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQarz.resx">
+      <DependentUpon>frmQarz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQarzCompany.resx">
+      <DependentUpon>frmQarzCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestory.resx">
+      <DependentUpon>frmRestory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSell.resx">
+      <DependentUpon>frmSell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmType.resx">
+      <DependentUpon>frmType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTypeXarje.resx">
+      <DependentUpon>frmTypeXarje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXarje.resx">
+      <DependentUpon>frmXarje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\pReport.resx">
+      <DependentUpon>pReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="report\frmFroshraw_rp.resx">
+      <DependentUpon>frmFroshraw_rp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\frmFroshtn_rp.resx">
+      <DependentUpon>frmFroshtn_rp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\frmFroshyar_rpt.resx">
+      <DependentUpon>frmFroshyar_rpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\frmKryarWasl_rpt.resx">
+      <DependentUpon>frmKryarWasl_rpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\frmKryar_rpt.resx">
+      <DependentUpon>frmKryar_rpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\frmMandub_rp.resx">
+      <DependentUpon>frmMandub_rp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\frmXarje_rp.resx">
+      <DependentUpon>frmXarje_rp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptFroshraw.rdlc" />
+    <EmbeddedResource Include="report\rptFroshtn.rdlc" />
+    <EmbeddedResource Include="report\rptKryar.rdlc" />
+    <EmbeddedResource Include="report\rptKryarWasl.rdlc" />
+    <EmbeddedResource Include="report\rptMandub.rdlc" />
+    <EmbeddedResource Include="report\rptXarje.rdlc" />
+    <EmbeddedResource Include="report\rpt_Froshyar.rdlc" />
+    <None Include="InvntoryDataSet.xsc">
+      <DependentUpon>InvntoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvntoryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvntoryDataSet.xss">
+      <DependentUpon>InvntoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSet1.xsc">
+      <DependentUpon>InvntoryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvntoryDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvntoryDataSet1.xss">
+      <DependentUpon>InvntoryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSet2.xsc">
+      <DependentUpon>InvntoryDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvntoryDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvntoryDataSet2.xss">
+      <DependentUpon>InvntoryDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSet3.xsc">
+      <DependentUpon>InvntoryDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvntoryDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvntoryDataSet3.xss">
+      <DependentUpon>InvntoryDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSet4.xsc">
+      <DependentUpon>InvntoryDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvntoryDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvntoryDataSet4.xss">
+      <DependentUpon>InvntoryDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSetCompany.xsc">
+      <DependentUpon>InvntoryDataSetCompany.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSetCompany.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvntoryDataSetCompany.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvntoryDataSetCompany.xss">
+      <DependentUpon>InvntoryDataSetCompany.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSetFroshraw.xsc">
+      <DependentUpon>InvntoryDataSetFroshraw.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSetFroshraw.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvntoryDataSetFroshraw.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvntoryDataSetFroshraw.xss">
+      <DependentUpon>InvntoryDataSetFroshraw.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSetGarawa.xsc">
+      <DependentUpon>InvntoryDataSetGarawa.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSetGarawa.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvntoryDataSetGarawa.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvntoryDataSetGarawa.xss">
+      <DependentUpon>InvntoryDataSetGarawa.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSetkryar.xsc">
+      <DependentUpon>InvntoryDataSetkryar.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSetkryar.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvntoryDataSetkryar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvntoryDataSetkryar.xss">
+      <DependentUpon>InvntoryDataSetkryar.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSetMandub.xsc">
+      <DependentUpon>InvntoryDataSetMandub.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSetMandub.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvntoryDataSetMandub.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvntoryDataSetMandub.xss">
+      <DependentUpon>InvntoryDataSetMandub.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSetXarje.xsc">
+      <DependentUpon>InvntoryDataSetXarje.xsd</DependentUpon>
+    </None>
+    <None Include="InvntoryDataSetXarje.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvntoryDataSetXarje.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvntoryDataSetXarje.xss">
+      <DependentUpon>InvntoryDataSetXarje.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_discount_48px_2.png" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\loss.png" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\backup.png" />
+    <None Include="Resources\backup-copy.png" />
+    <None Include="Resources\32076789_1845521162176987_6958251721403400192_n.jpg" />
+    <None Include="Resources\selling.png" />
+    <None Include="Resources\sold.png" />
+    <None Include="Resources\debt.png" />
+    <None Include="Resources\analytics.png" />
+    <None Include="Resources\Asset 11.png" />
+    <None Include="Resources\Asset 9.png" />
+    <None Include="Resources\Asset 5.png" />
+    <None Include="Resources\Asset 12.png" />
+    <None Include="Resources\Asset 7.png" />
+    <None Include="Resources\Untitled-1v.png" />
+    <None Include="Resources\Untitled-1.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\button.png" />
+    <None Include="Resources\target.png" />
+    <None Include="Resources\agent.png" />
+    <None Include="Resources\taxes.png" />
+    <None Include="Resources\buy.png" />
+    <None Include="Resources\trusted-seller.png" />
+    <None Include="Resources\payment.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="InvntoryDataSetGarawa" targetNamespace="http://tempuri.org/InvntoryDataSetGarawa.xsd" xmlns:mstns="http://tempuri.org/InvntoryDataSetGarawa.xsd" xmlns="http://tempuri.org/InvntoryDataSetGarawa.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="InvntoryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="InvntoryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Inventory.Properties.Settings.GlobalReference.Default.InvntoryConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="back_to_kogaTableAdapter" GeneratorDataComponentClassName="back_to_kogaTableAdapter" Name="back_to_koga" UserDataComponentName="back_to_kogaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="InvntoryConnectionString (Settings)" DbObjectName="Invntory.dbo.back_to_koga" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        back_to_koga.barcode, back_to_koga.item_name, SUM(back_to_koga.dana) AS dana, SUM(back_to_koga.karton) AS karton, back_to_koga.nrxy_garanawaa
+FROM            back_to_koga INNER JOIN
+                         kryar ON back_to_koga.froshtn_id = kryar.id
+GROUP BY back_to_koga.barcode, back_to_koga.item_name, back_to_koga.nrxy_garanawaa</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="barcode" DataSetColumn="barcode" />
+              <Mapping SourceColumn="item_name" DataSetColumn="item_name" />
+              <Mapping SourceColumn="dana" DataSetColumn="dana" />
+              <Mapping SourceColumn="karton" DataSetColumn="karton" />
+              <Mapping SourceColumn="nrxy_garanawaa" DataSetColumn="nrxy_garanawaa" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="InvntoryDataSetGarawa" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="InvntoryDataSetGarawa" msprop:Generator_UserDSName="InvntoryDataSetGarawa">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="back_to_koga" msprop:Generator_TableClassName="back_to_kogaDataTable" msprop:Generator_TableVarName="tableback_to_koga" msprop:Generator_TablePropName="back_to_koga" msprop:Generator_RowDeletingName="back_to_kogaRowDeleting" msprop:Generator_RowChangingName="back_to_kogaRowChanging" msprop:Generator_RowEvHandlerName="back_to_kogaRowChangeEventHandler" msprop:Generator_RowDeletedName="back_to_kogaRowDeleted" msprop:Generator_UserTableName="back_to_koga" msprop:Generator_RowChangedName="back_to_kogaRowChanged" msprop:Generator_RowEvArgName="back_to_kogaRowChangeEvent" msprop:Generator_RowClassName="back_to_kogaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="barcode" msprop:Generator_ColumnVarNameInTable="columnbarcode" msprop:Generator_ColumnPropNameInRow="barcode" msprop:Generator_ColumnPropNameInTable="barcodeColumn" msprop:Generator_UserColumnName="barcode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="item_name" msprop:Generator_ColumnVarNameInTable="columnitem_name" msprop:Generator_ColumnPropNameInRow="item_name" msprop:Generator_ColumnPropNameInTable="item_nameColumn" msprop:Generator_UserColumnName="item_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dana" msprop:Generator_ColumnVarNameInTable="columndana" msprop:Generator_ColumnPropNameInRow="dana" msprop:Generator_ColumnPropNameInTable="danaColumn" msprop:Generator_UserColumnName="dana" type="xs:int" minOccurs="0" />
+              <xs:element name="karton" msprop:Generator_ColumnVarNameInTable="columnkarton" msprop:Generator_ColumnPropNameInRow="karton" msprop:Generator_ColumnPropNameInTable="kartonColumn" msprop:Generator_UserColumnName="karton" type="xs:int" minOccurs="0" />
+              <xs:element name="nrxy_garanawaa" msprop:Generator_ColumnVarNameInTable="columnnrxy_garanawaa" msprop:Generator_ColumnPropNameInRow="nrxy_garanawaa" msprop:Generator_ColumnPropNameInTable="nrxy_garanawaaColumn" msprop:Generator_UserColumnName="nrxy_garanawaa" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

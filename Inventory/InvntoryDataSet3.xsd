@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="InvntoryDataSet3" targetNamespace="http://tempuri.org/InvntoryDataSet3.xsd" xmlns:mstns="http://tempuri.org/InvntoryDataSet3.xsd" xmlns="http://tempuri.org/InvntoryDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="InvntoryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="InvntoryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Inventory.Properties.Settings.GlobalReference.Default.InvntoryConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="kryarTableAdapter" GeneratorDataComponentClassName="kryarTableAdapter" Name="kryar" UserDataComponentName="kryarTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="InvntoryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        kryar.name, kryar.shwen, kryar.mobile, kryar.mandub_id, danaway_qarz_kryar.bry_para, kryar.bry_qarz, kryar.bry_qarzy_nwe, danaway_qarz_kryar.barwar
+FROM            kryar INNER JOIN
+                         danaway_qarz_kryar ON kryar.id = danaway_qarz_kryar.kryar_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="shwen" DataSetColumn="shwen" />
+              <Mapping SourceColumn="mobile" DataSetColumn="mobile" />
+              <Mapping SourceColumn="mandub_id" DataSetColumn="mandub_id" />
+              <Mapping SourceColumn="bry_para" DataSetColumn="bry_para" />
+              <Mapping SourceColumn="bry_qarz" DataSetColumn="bry_qarz" />
+              <Mapping SourceColumn="bry_qarzy_nwe" DataSetColumn="bry_qarzy_nwe" />
+              <Mapping SourceColumn="barwar" DataSetColumn="barwar" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="InvntoryDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="InvntoryDataSet3" msprop:Generator_UserDSName="InvntoryDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="kryar" msprop:Generator_TableClassName="kryarDataTable" msprop:Generator_TableVarName="tablekryar" msprop:Generator_RowChangedName="kryarRowChanged" msprop:Generator_TablePropName="kryar" msprop:Generator_RowDeletingName="kryarRowDeleting" msprop:Generator_RowChangingName="kryarRowChanging" msprop:Generator_RowEvHandlerName="kryarRowChangeEventHandler" msprop:Generator_RowDeletedName="kryarRowDeleted" msprop:Generator_RowClassName="kryarRow" msprop:Generator_UserTableName="kryar" msprop:Generator_RowEvArgName="kryarRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="shwen" msprop:Generator_ColumnVarNameInTable="columnshwen" msprop:Generator_ColumnPropNameInRow="shwen" msprop:Generator_ColumnPropNameInTable="shwenColumn" msprop:Generator_UserColumnName="shwen" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mobile" msprop:Generator_ColumnVarNameInTable="columnmobile" msprop:Generator_ColumnPropNameInRow="mobile" msprop:Generator_ColumnPropNameInTable="mobileColumn" msprop:Generator_UserColumnName="mobile" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mandub_id" msprop:Generator_ColumnVarNameInTable="columnmandub_id" msprop:Generator_ColumnPropNameInRow="mandub_id" msprop:Generator_ColumnPropNameInTable="mandub_idColumn" msprop:Generator_UserColumnName="mandub_id" type="xs:int" minOccurs="0" />
+              <xs:element name="bry_para" msprop:Generator_ColumnVarNameInTable="columnbry_para" msprop:Generator_ColumnPropNameInRow="bry_para" msprop:Generator_ColumnPropNameInTable="bry_paraColumn" msprop:Generator_UserColumnName="bry_para" type="xs:int" minOccurs="0" />
+              <xs:element name="bry_qarz" msprop:Generator_ColumnVarNameInTable="columnbry_qarz" msprop:Generator_ColumnPropNameInRow="bry_qarz" msprop:Generator_ColumnPropNameInTable="bry_qarzColumn" msprop:Generator_UserColumnName="bry_qarz" type="xs:int" minOccurs="0" />
+              <xs:element name="bry_qarzy_nwe" msprop:Generator_ColumnVarNameInTable="columnbry_qarzy_nwe" msprop:Generator_ColumnPropNameInRow="bry_qarzy_nwe" msprop:Generator_ColumnPropNameInTable="bry_qarzy_nweColumn" msprop:Generator_UserColumnName="bry_qarzy_nwe" type="xs:int" minOccurs="0" />
+              <xs:element name="barwar" msprop:Generator_ColumnVarNameInTable="columnbarwar" msprop:Generator_ColumnPropNameInRow="barwar" msprop:Generator_ColumnPropNameInTable="barwarColumn" msprop:Generator_UserColumnName="barwar" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="InvntoryDataSet1" targetNamespace="http://tempuri.org/InvntoryDataSet1.xsd" xmlns:mstns="http://tempuri.org/InvntoryDataSet1.xsd" xmlns="http://tempuri.org/InvntoryDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="InvntoryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="InvntoryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Inventory.Properties.Settings.GlobalReference.Default.InvntoryConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="froshtnTableAdapter" GeneratorDataComponentClassName="froshtnTableAdapter" Name="froshtn" UserDataComponentName="froshtnTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="InvntoryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        froshtn.id, froshtn.item_id, froshtn.froshtn_ba_qarz_id, froshtn.wasl, froshtn.nrxy_froshtn, froshtn.barwary_froshtn, froshtn.dana, froshtn.karton, froshtn.dashkan, froshtn.mawa, item.name, item.barcode, 
+                         froshtn_ba_qarz.bry_para, froshtn_ba_qarz.bry_qarz, kryar.name AS nameK, kryar.mobile, kryar.shwen
+FROM            kryar INNER JOIN
+                         froshtn_ba_qarz ON kryar.id = froshtn_ba_qarz.kryar_id INNER JOIN
+                         froshtn ON froshtn_ba_qarz.id = froshtn.froshtn_ba_qarz_id INNER JOIN
+                         item ON froshtn.item_id = item.id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="item_id" DataSetColumn="item_id" />
+              <Mapping SourceColumn="froshtn_ba_qarz_id" DataSetColumn="froshtn_ba_qarz_id" />
+              <Mapping SourceColumn="wasl" DataSetColumn="wasl" />
+              <Mapping SourceColumn="nrxy_froshtn" DataSetColumn="nrxy_froshtn" />
+              <Mapping SourceColumn="barwary_froshtn" DataSetColumn="barwary_froshtn" />
+              <Mapping SourceColumn="dana" DataSetColumn="dana" />
+              <Mapping SourceColumn="karton" DataSetColumn="karton" />
+              <Mapping SourceColumn="dashkan" DataSetColumn="dashkan" />
+              <Mapping SourceColumn="mawa" DataSetColumn="mawa" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="barcode" DataSetColumn="barcode" />
+              <Mapping SourceColumn="bry_para" DataSetColumn="bry_para" />
+              <Mapping SourceColumn="bry_qarz" DataSetColumn="bry_qarz" />
+              <Mapping SourceColumn="mobile" DataSetColumn="mobile" />
+              <Mapping SourceColumn="shwen" DataSetColumn="shwen" />
+              <Mapping SourceColumn="nameK" DataSetColumn="nameK" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="itemTableAdapter" GeneratorDataComponentClassName="itemTableAdapter" Name="item" UserDataComponentName="itemTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="InvntoryConnectionString (Settings)" DbObjectName="Invntory.dbo.item" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [item] WHERE (([barcode] = @Original_barcode) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ([id] = @Original_id))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_barcode" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="barcode" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_name" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [item] ([barcode], [name]) VALUES (@barcode, @name)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@barcode" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="barcode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        barcode, name, id
+FROM            item</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [item] SET [barcode] = @barcode, [name] = @name WHERE (([barcode] = @Original_barcode) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ([id] = @Original_id))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@barcode" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="barcode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_barcode" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="barcode" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_name" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="barcode" DataSetColumn="barcode" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="InvntoryDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="InvntoryDataSet1" msprop:Generator_UserDSName="InvntoryDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="froshtn" msprop:Generator_TableClassName="froshtnDataTable" msprop:Generator_TableVarName="tablefroshtn" msprop:Generator_TablePropName="froshtn" msprop:Generator_RowDeletingName="froshtnRowDeleting" msprop:Generator_RowChangingName="froshtnRowChanging" msprop:Generator_RowEvHandlerName="froshtnRowChangeEventHandler" msprop:Generator_RowDeletedName="froshtnRowDeleted" msprop:Generator_UserTableName="froshtn" msprop:Generator_RowChangedName="froshtnRowChanged" msprop:Generator_RowEvArgName="froshtnRowChangeEvent" msprop:Generator_RowClassName="froshtnRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="item_id" msprop:Generator_ColumnVarNameInTable="columnitem_id" msprop:Generator_ColumnPropNameInRow="item_id" msprop:Generator_ColumnPropNameInTable="item_idColumn" msprop:Generator_UserColumnName="item_id" type="xs:int" minOccurs="0" />
+              <xs:element name="froshtn_ba_qarz_id" msprop:Generator_ColumnVarNameInTable="columnfroshtn_ba_qarz_id" msprop:Generator_ColumnPropNameInRow="froshtn_ba_qarz_id" msprop:Generator_ColumnPropNameInTable="froshtn_ba_qarz_idColumn" msprop:Generator_UserColumnName="froshtn_ba_qarz_id" type="xs:int" minOccurs="0" />
+              <xs:element name="wasl" msprop:Generator_ColumnVarNameInTable="columnwasl" msprop:Generator_ColumnPropNameInRow="wasl" msprop:Generator_ColumnPropNameInTable="waslColumn" msprop:Generator_UserColumnName="wasl" type="xs:int" minOccurs="0" />
+              <xs:element name="nrxy_froshtn" msprop:Generator_ColumnVarNameInTable="columnnrxy_froshtn" msprop:Generator_ColumnPropNameInRow="nrxy_froshtn" msprop:Generator_ColumnPropNameInTable="nrxy_froshtnColumn" msprop:Generator_UserColumnName="nrxy_froshtn" type="xs:int" minOccurs="0" />
+              <xs:element name="barwary_froshtn" msprop:Generator_ColumnVarNameInTable="columnbarwary_froshtn" msprop:Generator_ColumnPropNameInRow="barwary_froshtn" msprop:Generator_ColumnPropNameInTable="barwary_froshtnColumn" msprop:Generator_UserColumnName="barwary_froshtn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dana" msprop:Generator_ColumnVarNameInTable="columndana" msprop:Generator_ColumnPropNameInRow="dana" msprop:Generator_ColumnPropNameInTable="danaColumn" msprop:Generator_UserColumnName="dana" type="xs:int" minOccurs="0" />
+              <xs:element name="karton" msprop:Generator_ColumnVarNameInTable="columnkarton" msprop:Generator_ColumnPropNameInRow="karton" msprop:Generator_ColumnPropNameInTable="kartonColumn" msprop:Generator_UserColumnName="karton" type="xs:int" minOccurs="0" />
+              <xs:element name="dashkan" msprop:Generator_ColumnVarNameInTable="columndashkan" msprop:Generator_ColumnPropNameInRow="dashkan" msprop:Generator_ColumnPropNameInTable="dashkanColumn" msprop:Generator_UserColumnName="dashkan">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mawa" msprop:Generator_ColumnVarNameInTable="columnmawa" msprop:Generator_ColumnPropNameInRow="mawa" msprop:Generator_ColumnPropNameInTable="mawaColumn" msprop:Generator_UserColumnName="mawa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="barcode" msprop:Generator_ColumnVarNameInTable="columnbarcode" msprop:Generator_ColumnPropNameInRow="barcode" msprop:Generator_ColumnPropNameInTable="barcodeColumn" msprop:Generator_UserColumnName="barcode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bry_para" msprop:Generator_ColumnVarNameInTable="columnbry_para" msprop:Generator_ColumnPropNameInRow="bry_para" msprop:Generator_ColumnPropNameInTable="bry_paraColumn" msprop:Generator_UserColumnName="bry_para" type="xs:int" minOccurs="0" />
+              <xs:element name="bry_qarz" msprop:Generator_ColumnVarNameInTable="columnbry_qarz" msprop:Generator_ColumnPropNameInRow="bry_qarz" msprop:Generator_ColumnPropNameInTable="bry_qarzColumn" msprop:Generator_UserColumnName="bry_qarz" type="xs:int" minOccurs="0" />
+              <xs:element name="mobile" msprop:Generator_ColumnVarNameInTable="columnmobile" msprop:Generator_ColumnPropNameInRow="mobile" msprop:Generator_ColumnPropNameInTable="mobileColumn" msprop:Generator_UserColumnName="mobile" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="shwen" msprop:Generator_ColumnVarNameInTable="columnshwen" msprop:Generator_ColumnPropNameInRow="shwen" msprop:Generator_ColumnPropNameInTable="shwenColumn" msprop:Generator_UserColumnName="shwen" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nameK" msprop:Generator_ColumnVarNameInTable="columnnameK" msprop:Generator_ColumnPropNameInRow="nameK" msprop:Generator_ColumnPropNameInTable="nameKColumn" msprop:Generator_UserColumnName="nameK" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="item" msprop:Generator_TableClassName="itemDataTable" msprop:Generator_TableVarName="tableitem" msprop:Generator_TablePropName="item" msprop:Generator_RowDeletingName="itemRowDeleting" msprop:Generator_RowChangingName="itemRowChanging" msprop:Generator_RowEvHandlerName="itemRowChangeEventHandler" msprop:Generator_RowDeletedName="itemRowDeleted" msprop:Generator_UserTableName="item" msprop:Generator_RowChangedName="itemRowChanged" msprop:Generator_RowEvArgName="itemRowChangeEvent" msprop:Generator_RowClassName="itemRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="barcode" msprop:Generator_ColumnVarNameInTable="columnbarcode" msprop:Generator_ColumnPropNameInRow="barcode" msprop:Generator_ColumnPropNameInTable="barcodeColumn" msprop:Generator_UserColumnName="barcode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:froshtn" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="item_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:item" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_froshtn_item" msdata:parent="item" msdata:child="froshtn" msdata:parentkey="id" msdata:childkey="item_id" msprop:Generator_UserChildTable="froshtn" msprop:Generator_ChildPropName="GetfroshtnRows" msprop:Generator_UserRelationName="FK_froshtn_item" msprop:Generator_ParentPropName="itemRow" msprop:Generator_RelationVarName="relationFK_froshtn_item" msprop:Generator_UserParentTable="item" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
